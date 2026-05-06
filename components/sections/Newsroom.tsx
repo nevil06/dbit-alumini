@@ -8,11 +8,11 @@ import { newsItems } from "@/lib/data/news";
 
 export default function Newsroom() {
   return (
-    <section className="py-24" style={{ background: "#FFFFFF" }}>
+    <section className="py-28" style={{ background: "#FFFFFF" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Newsroom"
-          title="Stories from the Boscoite Community"
+          title="Stories from the DBITian Community"
           subtitle="Events, reunions, achievements and milestones that keep our alumni family thriving."
         />
 

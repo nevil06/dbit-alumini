@@ -34,7 +34,7 @@ const ways = [
 export default function ContributeSection() {
   return (
     <section
-      className="py-24 relative overflow-hidden"
+      className="py-28 relative overflow-hidden"
       style={{ background: "#0F172A" }}
     >
       {/* Background accent */}
@@ -53,7 +53,7 @@ export default function ContributeSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
-          className="text-center mb-16 max-w-3xl mx-auto"
+          className="text-center mb-16 max-w-4xl mx-auto flex flex-col items-center justify-center w-full"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -70,13 +70,13 @@ export default function ContributeSection() {
             Give Back
           </span>
           <h2
-            className="font-[family-name:var(--font-sora)] font-extrabold text-white leading-tight"
+            className="font-[family-name:var(--font-sora)] font-extrabold text-white leading-tight text-center w-full block"
             style={{ fontSize: "clamp(1.8rem,4.5vw,3.2rem)" }}
           >
-            Give Back to the Institution{" "}
+            Give Back to the Institution <br className="hidden sm:block" />
             <span className="gradient-text">That Shaped Your Journey</span>
           </h2>
-          <p className="mt-5 text-white/60 leading-relaxed text-base">
+          <p className="mt-5 text-white/60 leading-relaxed text-base text-center w-full block">
             DBIT gave you the foundation. Now, you have the power to build the same foundation
             for the students who walk those corridors today. Every contribution — big or small — creates a lasting impact.
           </p>
@@ -87,7 +87,7 @@ export default function ContributeSection() {
           {ways.map((w, i) => (
             <motion.div
               key={w.title}
-              className="rounded-2xl p-6 group"
+              className="rounded-2xl p-10 group flex flex-col items-start"
               style={{
                 background: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.08)",
@@ -130,14 +130,14 @@ export default function ContributeSection() {
         >
           <Link
             href="/contribute"
-            className="inline-flex items-center gap-3 px-10 py-4 rounded-full font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-[0_12px_40px_rgba(244,180,0,0.4)]"
+            className="inline-flex items-center justify-center gap-3 px-12 py-5 rounded-full font-bold text-lg tracking-wider transition-all duration-300 hover:scale-105 hover:shadow-[0_12px_40px_rgba(244,180,0,0.4)] min-w-[280px]"
             style={{
               background: "linear-gradient(135deg, #F4B400, #FFB300)",
               color: "#072A63",
             }}
           >
             Start Contributing Today
-            <ArrowRight size={18} />
+            <ArrowRight size={20} />
           </Link>
           <p className="mt-4 text-white/35 text-xs">
             Join 500+ alumni already making a difference

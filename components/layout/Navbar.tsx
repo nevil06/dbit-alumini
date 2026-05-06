@@ -4,15 +4,15 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Newsroom", href: "/newsroom" },
-  { label: "Members", href: "/members" },
+  { label: "Stories", href: "/newsroom" },
   { label: "Alumni Assist", href: "/alumni-assist" },
-  { label: "Distinguished Alumni", href: "/distinguished" },
-  { label: "Contribute", href: "/contribute" },
+  { label: "Achievements", href: "/distinguished" },
+  { label: "Contribution", href: "/contribute" },
 ];
 
 export default function Navbar() {
@@ -85,25 +85,20 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-[70px]">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <div
-                className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-white text-sm border-2 border-[#F4B400] flex-shrink-0"
-                style={{ background: "linear-gradient(135deg, #0B3D91, #072A63)" }}
-              >
-                DB
-              </div>
-              <div className="hidden sm:block">
-                <p className="font-[family-name:var(--font-sora)] font-bold text-white text-sm leading-tight">
-                  DBIT Alumni
+            <Link href="/" className="flex items-center gap-2 group">
+              <Image src="/images/alumni-logo.jpg" alt="Alumni Logo" width={44} height={44} className="rounded-full bg-white object-contain border-2 border-[#0B3D91] shadow-sm" />
+              <div className="hidden md:block ml-1">
+                <p className="font-[family-name:var(--font-sora)] font-bold text-white text-sm leading-tight tracking-wide">
+                  Don Bosco Alumni
                 </p>
-                <p className="text-[10px] text-[#F4B400] tracking-wider uppercase font-medium">
+                <p className="text-[10px] text-[#F4B400] tracking-widest uppercase font-semibold">
                   Association
                 </p>
               </div>
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.label}
@@ -115,18 +110,8 @@ export default function Navbar() {
               ))}
             </nav>
 
-            {/* CTA + Hamburger */}
+            {/* Hamburger */}
             <div className="flex items-center gap-3">
-              <Link
-                href="/members"
-                className="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105"
-                style={{
-                  background: "linear-gradient(135deg, #F4B400, #FFB300)",
-                  color: "#072A63",
-                }}
-              >
-                Join Network
-              </Link>
               <button
                 onClick={() => setMobileOpen(true)}
                 className="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
@@ -163,15 +148,10 @@ export default function Navbar() {
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
             >
               <div className="flex items-center justify-between p-5 border-b border-white/10">
-                <div className="flex items-center gap-3">
-                  <div
-                    className="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-bold border border-[#F4B400]"
-                    style={{ background: "#0B3D91" }}
-                  >
-                    DB
-                  </div>
-                  <span className="font-[family-name:var(--font-sora)] font-bold text-white text-sm">
-                    DBIT Alumni
+                <div className="flex items-center gap-2">
+                  <Image src="/images/alumni-logo.jpg" alt="Alumni Logo" width={36} height={36} className="rounded-full object-contain bg-white" />
+                  <span className="font-[family-name:var(--font-sora)] font-bold text-white text-sm ml-1">
+                    Don Bosco Alumni
                   </span>
                 </div>
                 <button
@@ -200,20 +180,6 @@ export default function Navbar() {
                   </motion.div>
                 ))}
               </nav>
-
-              <div className="p-5 border-t border-white/10">
-                <Link
-                  href="/members"
-                  onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-center w-full py-3 rounded-full font-bold text-sm transition-transform hover:scale-105"
-                  style={{
-                    background: "linear-gradient(135deg, #F4B400, #FFB300)",
-                    color: "#072A63",
-                  }}
-                >
-                  Join the Alumni Network
-                </Link>
-              </div>
             </motion.div>
           </>
         )}

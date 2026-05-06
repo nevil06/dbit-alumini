@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   MapPin, Mail, ArrowUpRight
 } from "lucide-react";
@@ -81,16 +82,11 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-5">
-              <div
-                className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-white border-2 border-[#F4B400]"
-                style={{ background: "linear-gradient(135deg,#0B3D91,#072A63)" }}
-              >
-                DB
-              </div>
-              <div>
-                <p className="font-[family-name:var(--font-sora)] font-bold text-white text-base leading-tight">
-                  DBIT Alumni
+            <div className="flex items-center gap-2 mb-5">
+              <Image src="/images/alumni-logo.jpg" alt="Alumni Logo" width={48} height={48} className="rounded-full object-contain bg-white border border-[#0B3D91]" />
+              <div className="ml-1">
+                <p className="font-[family-name:var(--font-sora)] font-bold text-white text-base leading-tight tracking-wide">
+                  Don Bosco Alumni
                 </p>
                 <p className="text-[10px] text-[#F4B400] tracking-widest uppercase">
                   Association
@@ -99,7 +95,7 @@ export default function Footer() {
             </div>
             <p className="text-white/55 text-sm leading-relaxed mb-6">
               The official alumni network of Don Bosco Institute of Technology,
-              Bangalore. Connecting Boscoites across the globe since 2001.
+              Bangalore. Connecting DBITians across the globe since 2001.
             </p>
             <div className="space-y-2 text-sm text-white/50">
               <div className="flex items-start gap-2">

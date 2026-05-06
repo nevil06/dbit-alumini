@@ -33,7 +33,7 @@ export default function ImpactStats() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-16 flex flex-col items-center justify-center w-full"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -55,17 +55,17 @@ export default function ImpactStats() {
           >
             Our Alumni Impact, Worldwide
           </h2>
-          <p className="mt-4 text-white/60 max-w-xl mx-auto text-base">
-            A community of changemakers, innovators, and leaders — united by the Boscoite spirit.
+          <p className="mt-5 text-white/60 max-w-xl mx-auto text-base text-center w-full block">
+            A community of changemakers, innovators, and leaders — united by the DBITian spirit.
           </p>
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-5 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-10">
           {impactStats.map((stat, i) => (
             <motion.div
               key={stat.id}
-              className="relative rounded-2xl p-6 lg:p-8 text-center overflow-hidden group"
+              className="relative rounded-2xl p-10 lg:p-12 text-center overflow-hidden group"
               style={{
                 background: "rgba(255,255,255,0.06)",
                 border: "1px solid rgba(255,255,255,0.1)",
@@ -85,7 +85,7 @@ export default function ImpactStats() {
 
               {/* Icon */}
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 text-[#F4B400]"
+                className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#F4B400]"
                 style={{ background: "rgba(244,180,0,0.12)", border: "1px solid rgba(244,180,0,0.2)" }}
               >
                 {iconMap[stat.icon]}

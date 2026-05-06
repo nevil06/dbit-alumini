@@ -67,7 +67,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          Once a Boscoite.{" "}
+          Once a DBITian.{" "}
           <span className="gradient-text">Always Connected.</span>
         </motion.h1>
 
@@ -92,7 +92,7 @@ export default function HeroSection() {
         >
           <Link
             href="/members"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-sm tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_30px_rgba(244,180,0,0.5)]"
+            className="inline-flex items-center justify-center gap-3 px-12 py-5 rounded-full font-bold text-base tracking-wider transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_30px_rgba(244,180,0,0.5)] min-w-[240px]"
             style={{
               background: "linear-gradient(135deg, #F4B400 0%, #FFB300 100%)",
               color: "#072A63",
@@ -102,7 +102,7 @@ export default function HeroSection() {
           </Link>
           <Link
             href="/about"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-sm tracking-wide text-white transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center justify-center gap-3 px-12 py-5 rounded-full font-bold text-base tracking-wider text-white transition-all duration-300 hover:scale-105 min-w-[240px]"
             style={{
               background: "rgba(255,255,255,0.1)",
               border: "1px solid rgba(255,255,255,0.3)",

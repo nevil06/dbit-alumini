@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="bg-white">
         <HeroSection />
         <MemoriesMarquee />
         <ImpactStats />

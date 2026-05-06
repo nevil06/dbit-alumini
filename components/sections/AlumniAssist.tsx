@@ -9,7 +9,7 @@ const pillars = [
     icon: <Briefcase size={28} />,
     title: "Job Board",
     description:
-      "Alumni-exclusive job postings from companies founded or led by Boscoites. Refer, hire, and grow together.",
+      "Alumni-exclusive job postings from companies founded or led by DBITians. Refer, hire, and grow together.",
     cta: "Browse Opportunities",
     href: "/alumni-assist",
     color: "#0B3D91",
@@ -27,7 +27,7 @@ const pillars = [
     icon: <Lightbulb size={28} />,
     title: "Network",
     description:
-      "Build lasting professional relationships with 10,000+ Boscoites across 18 countries.",
+      "Build lasting professional relationships with 10,000+ DBITians across 18 countries.",
     cta: "Join the Network",
     href: "/members",
     color: "#072A63",
@@ -37,7 +37,7 @@ const pillars = [
 export default function AlumniAssist() {
   return (
     <section
-      className="py-24"
+      className="py-28"
       style={{ background: "#F0F4FF" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

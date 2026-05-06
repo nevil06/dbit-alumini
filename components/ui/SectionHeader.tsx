@@ -19,7 +19,7 @@ export default function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <motion.div
-      className={`mb-14 ${centered ? "text-center" : "text-left"}`}
+      className={`mb-14 ${centered ? "text-center flex flex-col items-center justify-center w-full" : "text-left"}`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
@@ -46,19 +46,8 @@ export default function SectionHeader({
       >
         {title}
       </h2>
-      {subtitle && (
-        <p
-          className="mt-4 leading-relaxed max-w-2xl mx-auto"
-          style={{
-            color: light ? "rgba(255,255,255,0.72)" : "#4A5568",
-            fontSize: "clamp(0.95rem, 1.8vw, 1.1rem)",
-          }}
-        >
-          {subtitle}
-        </p>
-      )}
       <motion.div
-        className="mt-5 mx-auto rounded-full"
+        className="mt-5 mb-5 mx-auto rounded-full"
         style={{
           width: centered ? "auto" : "fit-content",
           display: "flex",
@@ -78,6 +67,17 @@ export default function SectionHeader({
           }}
         />
       </motion.div>
+      {subtitle && (
+        <p
+          className="leading-relaxed max-w-4xl mx-auto text-center w-full block"
+          style={{
+            color: light ? "rgba(255,255,255,0.72)" : "#4A5568",
+            fontSize: "clamp(0.95rem, 1.8vw, 1.1rem)",
+          }}
+        >
+          {subtitle}
+        </p>
+      )}
     </motion.div>
   );
 }

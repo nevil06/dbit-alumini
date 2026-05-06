@@ -70,7 +70,7 @@ function MemoryCard({ item, index }: { item: typeof memories[0]; index: number }
 export default function MemoriesMarquee() {
   return (
     <section
-      className="py-12 overflow-hidden"
+      className="pt-12 pb-24 overflow-hidden"
       style={{ background: "#0F172A" }}
       aria-label="Alumni Memories Gallery"
     >
@@ -112,22 +112,6 @@ export default function MemoriesMarquee() {
         </div>
       </div>
 
-      {/* Row 2 — Right to Left */}
-      <div className="marquee-container relative">
-        <div
-          className="absolute left-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to right, #0F172A, transparent)" }}
-        />
-        <div
-          className="absolute right-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to left, #0F172A, transparent)" }}
-        />
-        <div className="marquee-track-reverse">
-          {[...row2, ...row2].map((item, i) => (
-            <MemoryCard key={`r2-${i}`} item={item} index={(i + 4) % memories.length} />
-          ))}
-        </div>
-      </div>
     </section>
   );
 }

@@ -72,8 +72,8 @@ export default function ContributeSection() {
             className="font-[family-name:var(--font-sora)] font-extrabold text-white leading-tight text-center w-full block"
             style={{ fontSize: "clamp(1.8rem,4.5vw,3.2rem)" }}
           >
-            Give Back to the Institution <br className="hidden sm:block" />
-            <span className="gradient-text">That Shaped Your Journey</span>
+            Give Back to the Institution <br />
+            <span className="gradient-text block mt-2">That Shaped Your Journey</span>
           </h2>
           <p className="mt-5 text-white/60 leading-relaxed text-base text-center w-full block">
             DBIT gave you the foundation. Now, you have the power to build the same foundation

@@ -49,7 +49,7 @@ export default function ContributeSection() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-24 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-12 lg:px-20 xl:px-32 relative z-10">
         {/* Header */}
         <motion.div
           className="text-center mb-16 max-w-4xl mx-auto flex flex-col items-center justify-center w-full"
@@ -81,11 +81,11 @@ export default function ContributeSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 lg:gap-8 mb-16">
           {ways.map((w, i) => (
             <motion.div
               key={w.title}
-              className="rounded-[2rem] p-7 lg:p-9 group flex flex-col items-start"
+              className="rounded-[2rem] p-8 lg:p-10 group flex flex-col items-start"
               style={{
                 background: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.08)",
@@ -109,11 +109,11 @@ export default function ContributeSection() {
                 {w.icon}
               </div>
               <h3
-                className="font-[family-name:var(--font-sora)] font-bold text-white text-[1.1rem] mb-4 mt-2"
+                className="font-[family-name:var(--font-sora)] font-bold text-white text-[1.1rem] mb-5 mt-2"
               >
                 {w.title}
               </h3>
-              <p className="text-white/50 text-[15px] leading-[1.8] mt-3">{w.description}</p>
+              <p className="text-white/50 text-[15px] leading-[1.7] mt-3">{w.description}</p>
             </motion.div>
           ))}
         </div>

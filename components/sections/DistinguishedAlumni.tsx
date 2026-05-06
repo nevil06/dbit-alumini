@@ -11,14 +11,14 @@ export default function DistinguishedAlumni() {
 
   return (
     <section className="py-[72px] md:py-[90px] lg:py-[120px]" style={{ background: "#F8FAFC" }}>
-      <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-24 pt-[40px] md:pt-[100px]">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-12 lg:px-20 xl:px-32 pt-[40px] md:pt-[80px]">
         <SectionHeader
           eyebrow="Distinguished Alumni"
           title="DBITians Who Changed the Game"
           subtitle="From DBIT classrooms to boardrooms, laboratories, and global stages — our alumni are shaping the future."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6 lg:gap-8">
           {featured.map((alumni, i) => (
             <motion.div
               key={alumni.id}

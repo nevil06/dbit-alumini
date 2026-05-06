@@ -40,7 +40,7 @@ export default function AlumniAssist() {
       className="py-[72px] md:py-[90px] lg:py-[120px]"
       style={{ background: "#F0F4FF" }}
     >
-      <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-24">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-12 lg:px-20 xl:px-32">
         <motion.div
           className="text-center mb-14"
           initial={{ opacity: 0, y: 30 }}
@@ -69,11 +69,11 @@ export default function AlumniAssist() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
           {pillars.map((p, i) => (
             <motion.div
               key={p.title}
-              className="rounded-[2rem] p-7 lg:p-9 group card-hover flex flex-col items-start"
+              className="rounded-[2rem] p-8 lg:p-10 group card-hover flex flex-col items-start"
               style={{
                 background: "#FFFFFF",
                 border: "1px solid rgba(11,61,145,0.06)",
@@ -91,12 +91,12 @@ export default function AlumniAssist() {
                 {p.icon}
               </div>
               <h3
-                className="font-[family-name:var(--font-sora)] font-bold text-2xl mb-4 tracking-tight mt-2"
+                className="font-[family-name:var(--font-sora)] font-bold text-2xl mb-5 tracking-tight mt-2"
                 style={{ color: "#0F172A" }}
               >
                 {p.title}
               </h3>
-              <p className="text-[#4A5568] text-base leading-[1.8] mb-8 flex-grow mt-3">{p.description}</p>
+              <p className="text-[#4A5568] text-[15px] leading-[1.7] mb-8 flex-grow mt-3">{p.description}</p>
               <Link
                 href={p.href}
                 className="inline-flex items-center gap-2 text-sm font-semibold transition-all group/link"

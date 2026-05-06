@@ -30,7 +30,7 @@ export default function ImpactStats() {
         style={{ background: "radial-gradient(circle, #F4B400 0%, transparent 70%)" }}
       />
 
-      <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-24">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-12 lg:px-20 xl:px-32">
         {/* Header */}
         <motion.div
           className="text-center mb-16 flex flex-col items-center justify-center w-full"
@@ -65,7 +65,7 @@ export default function ImpactStats() {
           {impactStats.map((stat, i) => (
             <motion.div
               key={stat.id}
-              className="relative rounded-[2rem] p-7 lg:p-9 text-center overflow-hidden group shadow-2xl"
+              className="relative rounded-[2rem] p-8 lg:p-10 text-center overflow-hidden group shadow-2xl"
               style={{
                 background: "rgba(255,255,255,0.04)",
                 border: "1px solid rgba(255,255,255,0.08)",
@@ -99,8 +99,8 @@ export default function ImpactStats() {
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
               </div>
 
-              <p className="font-bold text-white text-base tracking-wide mb-3 uppercase">{stat.label}</p>
-              <p className="text-white/50 text-sm leading-loose max-w-[90%] mx-auto">{stat.description}</p>
+              <p className="font-bold text-white text-base tracking-wide mb-5 mt-2 uppercase">{stat.label}</p>
+              <p className="text-white/50 text-[15px] leading-[1.7] max-w-[90%] mx-auto mt-3">{stat.description}</p>
             </motion.div>
           ))}
         </div>

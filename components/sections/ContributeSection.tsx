@@ -37,10 +37,9 @@ export default function ContributeSection() {
       className="py-[72px] md:py-[90px] lg:py-[120px] relative overflow-hidden"
       style={{ background: "#0F172A" }}
     >
-      {/* Background accent */}
       <div
-        className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: "linear-gradient(90deg, transparent, rgba(244,180,0,0.5), transparent)" }}
+        className="absolute top-0 left-0 right-0 h-32 pointer-events-none"
+        style={{ background: "linear-gradient(to bottom, rgba(15,23,42,1), transparent)" }}
       />
       <div
         className="absolute inset-0 pointer-events-none"
@@ -50,7 +49,7 @@ export default function ContributeSection() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-24 relative z-10">
         {/* Header */}
         <motion.div
           className="text-center mb-16 max-w-4xl mx-auto flex flex-col items-center justify-center w-full"
@@ -82,12 +81,11 @@ export default function ContributeSection() {
           </p>
         </motion.div>
 
-        {/* Ways grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
           {ways.map((w, i) => (
             <motion.div
               key={w.title}
-              className="rounded-[2rem] p-10 group flex flex-col items-start"
+              className="rounded-[2rem] p-7 lg:p-9 group flex flex-col items-start"
               style={{
                 background: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.08)",
@@ -105,17 +103,17 @@ export default function ContributeSection() {
               }}
             >
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-white"
+                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-white"
                 style={{ background: `linear-gradient(135deg, ${w.color}, ${w.color}aa)` }}
               >
                 {w.icon}
               </div>
               <h3
-                className="font-[family-name:var(--font-sora)] font-bold text-white text-lg mb-3"
+                className="font-[family-name:var(--font-sora)] font-bold text-white text-[1.1rem] mb-4 mt-2"
               >
                 {w.title}
               </h3>
-              <p className="text-white/50 text-sm leading-relaxed">{w.description}</p>
+              <p className="text-white/50 text-[15px] leading-[1.8] mt-3">{w.description}</p>
             </motion.div>
           ))}
         </div>
@@ -145,10 +143,9 @@ export default function ContributeSection() {
         </motion.div>
       </div>
 
-      {/* Bottom accent */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-px"
-        style={{ background: "linear-gradient(90deg, transparent, rgba(244,180,0,0.3), transparent)" }}
+        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+        style={{ background: "linear-gradient(to top, rgba(15,23,42,1), transparent)" }}
       />
     </section>
   );

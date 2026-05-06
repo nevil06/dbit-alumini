@@ -9,14 +9,14 @@ import { newsItems } from "@/lib/data/news";
 export default function Newsroom() {
   return (
     <section className="py-[72px] md:py-[90px] lg:py-[120px]" style={{ background: "#FFFFFF" }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-24">
         <SectionHeader
           eyebrow="Newsroom"
           title="Stories from the DBITian Community"
           subtitle="Events, reunions, achievements and milestones that keep our alumni family thriving."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {newsItems.map((item, i) => (
             <motion.article
               key={item.id}
@@ -56,8 +56,8 @@ export default function Newsroom() {
               </div>
 
               {/* Content */}
-              <div className="p-5">
-                <div className="flex items-center gap-3 mb-3 text-xs text-gray-400">
+              <div className="p-7 lg:p-9">
+                <div className="flex items-center gap-3 mb-5 text-xs text-gray-400">
                   <span className="flex items-center gap-1">
                     <Calendar size={11} />
                     {item.date}
@@ -69,13 +69,13 @@ export default function Newsroom() {
                 </div>
 
                 <h3
-                  className="font-[family-name:var(--font-sora)] font-bold text-base leading-snug mb-3 group-hover:text-[#0B3D91] transition-colors"
+                  className="font-[family-name:var(--font-sora)] font-bold text-[1.1rem] leading-snug mb-4 group-hover:text-[#0B3D91] transition-colors mt-2"
                   style={{ color: "#0F172A" }}
                 >
                   {item.title}
                 </h3>
 
-                <p className="text-sm leading-relaxed mb-4" style={{ color: "#4A5568" }}>
+                <p className="text-[15px] leading-[1.8] mb-6 mt-3" style={{ color: "#4A5568" }}>
                   {item.excerpt}
                 </p>
 

@@ -11,18 +11,18 @@ export default function DistinguishedAlumni() {
 
   return (
     <section className="py-[72px] md:py-[90px] lg:py-[120px]" style={{ background: "#F8FAFC" }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-24 pt-[40px] md:pt-[100px]">
         <SectionHeader
           eyebrow="Distinguished Alumni"
           title="DBITians Who Changed the Game"
           subtitle="From DBIT classrooms to boardrooms, laboratories, and global stages — our alumni are shaping the future."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {featured.map((alumni, i) => (
             <motion.div
               key={alumni.id}
-              className="relative rounded-2xl overflow-hidden group card-hover"
+              className="relative rounded-[2rem] overflow-hidden group card-hover"
               style={{
                 background: "#FFFFFF",
                 border: "1px solid rgba(11,61,145,0.08)",
@@ -41,7 +41,7 @@ export default function DistinguishedAlumni() {
                 }}
               />
 
-              <div className="p-12 flex flex-col h-full text-left">
+              <div className="p-8 lg:p-10 flex flex-col h-full text-left">
                 {/* Avatar + Name */}
                 <div className="flex flex-row items-center gap-6 mb-8">
                   <div

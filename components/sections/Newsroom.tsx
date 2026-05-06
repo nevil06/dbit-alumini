@@ -9,14 +9,14 @@ import { newsItems } from "@/lib/data/news";
 export default function Newsroom() {
   return (
     <section className="py-[72px] md:py-[90px] lg:py-[120px]" style={{ background: "#FFFFFF" }}>
-      <div className="max-w-[1400px] mx-auto px-5 md:px-12 lg:px-20 xl:px-32">
+      <div className="max-w-7xl mx-auto px-[20px] md:px-[48px] lg:px-[80px]">
         <SectionHeader
           eyebrow="Newsroom"
           title="Stories from the DBITian Community"
           subtitle="Events, reunions, achievements and milestones that keep our alumni family thriving."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] md:gap-[24px] lg:gap-[32px]">
           {newsItems.map((item, i) => (
             <motion.article
               key={item.id}

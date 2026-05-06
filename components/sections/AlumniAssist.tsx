@@ -40,7 +40,7 @@ export default function AlumniAssist() {
       className="py-[72px] md:py-[90px] lg:py-[120px]"
       style={{ background: "#F0F4FF" }}
     >
-      <div className="max-w-[1400px] mx-auto px-5 md:px-12 lg:px-20 xl:px-32">
+      <div className="max-w-7xl mx-auto px-[20px] md:px-[48px] lg:px-[80px]">
         <motion.div
           className="text-center mb-14"
           initial={{ opacity: 0, y: 30 }}
@@ -69,11 +69,11 @@ export default function AlumniAssist() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[20px] md:gap-[24px] lg:gap-[32px]">
           {pillars.map((p, i) => (
             <motion.div
               key={p.title}
-              className="rounded-[2rem] p-8 lg:p-10 group card-hover flex flex-col items-start"
+              className="rounded-[2rem] p-[32px] group card-hover flex flex-col items-start"
               style={{
                 background: "#FFFFFF",
                 border: "1px solid rgba(11,61,145,0.06)",
@@ -85,7 +85,7 @@ export default function AlumniAssist() {
               transition={{ duration: 0.5, delay: i * 0.12 }}
             >
               <div
-                className="w-16 h-16 rounded-[1.25rem] flex items-center justify-center mb-5 text-white shadow-sm"
+                className="w-16 h-16 rounded-[1.25rem] flex items-center justify-center mb-[20px] text-white shadow-sm"
                 style={{ background: `linear-gradient(135deg, ${p.color}, ${p.color}bb)` }}
               >
                 {p.icon}

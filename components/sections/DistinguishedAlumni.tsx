@@ -10,15 +10,19 @@ export default function DistinguishedAlumni() {
   const featured = distinguishedAlumni.slice(0, 6);
 
   return (
-    <section className="py-[72px] md:py-[90px] lg:py-[120px]" style={{ background: "#F8FAFC" }}>
-      <div className="max-w-[1400px] mx-auto px-5 md:px-12 lg:px-20 xl:px-32 pt-[40px] md:pt-[80px]">
+    <section className="py-[72px] md:py-[90px] lg:py-[120px] relative" style={{ background: "#F8FAFC" }}>
+      <div
+        className="absolute top-0 left-0 right-0 h-[150px] pointer-events-none"
+        style={{ background: "linear-gradient(to bottom, #0F172A, #F8FAFC)" }}
+      />
+      <div className="max-w-7xl mx-auto px-[20px] md:px-[48px] lg:px-[80px] pt-[120px] relative z-10">
         <SectionHeader
           eyebrow="Distinguished Alumni"
           title="DBITians Who Changed the Game"
           subtitle="From DBIT classrooms to boardrooms, laboratories, and global stages — our alumni are shaping the future."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[20px] md:gap-[24px] lg:gap-[32px]">
           {featured.map((alumni, i) => (
             <motion.div
               key={alumni.id}
@@ -41,7 +45,7 @@ export default function DistinguishedAlumni() {
                 }}
               />
 
-              <div className="p-8 lg:p-10 flex flex-col h-full text-left">
+              <div className="p-[32px] flex flex-col h-full text-left">
                 {/* Avatar + Name */}
                 <div className="flex flex-row items-center gap-6 mb-8">
                   <div

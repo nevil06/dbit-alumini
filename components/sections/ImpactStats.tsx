@@ -30,7 +30,7 @@ export default function ImpactStats() {
         style={{ background: "radial-gradient(circle, #F4B400 0%, transparent 70%)" }}
       />
 
-      <div className="max-w-[1400px] mx-auto px-5 md:px-12 lg:px-20 xl:px-32">
+      <div className="max-w-7xl mx-auto px-[20px] md:px-[48px] lg:px-[80px]">
         {/* Header */}
         <motion.div
           className="text-center mb-16 flex flex-col items-center justify-center w-full"
@@ -61,11 +61,11 @@ export default function ImpactStats() {
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[20px] md:gap-[24px] lg:gap-[32px]">
           {impactStats.map((stat, i) => (
             <motion.div
               key={stat.id}
-              className="relative rounded-[2rem] p-8 lg:p-10 text-center overflow-hidden group shadow-2xl"
+              className="relative rounded-[2rem] p-[32px] text-center overflow-hidden group shadow-2xl"
               style={{
                 background: "rgba(255,255,255,0.04)",
                 border: "1px solid rgba(255,255,255,0.08)",
@@ -85,7 +85,7 @@ export default function ImpactStats() {
 
               {/* Icon */}
               <div
-                className="w-16 h-16 rounded-[1.25rem] flex items-center justify-center mx-auto mb-5 text-[#F4B400] shadow-inner"
+                className="w-16 h-16 rounded-[1.25rem] flex items-center justify-center mx-auto mb-[20px] text-[#F4B400] shadow-inner"
                 style={{ background: "rgba(244,180,0,0.08)", border: "1px solid rgba(244,180,0,0.15)" }}
               >
                 {iconMap[stat.icon]}

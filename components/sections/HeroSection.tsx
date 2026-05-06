@@ -46,7 +46,7 @@ export default function HeroSection() {
       />
 
       {/* ── Hero Content ── */}
-      <div className="relative z-[3] h-full flex flex-col items-center justify-center text-center px-5 md:px-12 lg:px-20 xl:px-32 max-w-[1400px] mx-auto w-full">
+      <div className="relative z-[3] h-full flex flex-col items-center justify-center text-center px-[20px] md:px-[48px] lg:px-[80px] max-w-7xl mx-auto w-full">
         {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

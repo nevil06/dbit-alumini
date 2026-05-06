@@ -60,7 +60,7 @@ function MemoryCard({ item, index }: { item: typeof memories[0]; index: number }
 
       {/* Shimmer line */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+        className="absolute bottom-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
         style={{ background: "linear-gradient(90deg,#F4B400,#FFD54F)" }}
       />
     </div>
@@ -95,22 +95,25 @@ export default function MemoriesMarquee() {
       </div>
 
       {/* Row 1 — Left to Right */}
-      <div className="marquee-container mb-4 relative">
-        {/* Edge fades */}
+      <div className="marquee-container relative mb-12 shadow-2xl">
+        {/* Edge fades for cinematic marquee effect */}
         <div
-          className="absolute left-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to right, #0F172A, transparent)" }}
+          className="absolute left-0 top-0 bottom-0 w-32 md:w-48 z-10 pointer-events-none"
+          style={{ background: "linear-gradient(to right, #0F172A 0%, rgba(15,23,42,0.8) 20%, transparent 100%)" }}
         />
         <div
-          className="absolute right-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to left, #0F172A, transparent)" }}
+          className="absolute right-0 top-0 bottom-0 w-32 md:w-48 z-10 pointer-events-none"
+          style={{ background: "linear-gradient(to left, #0F172A 0%, rgba(15,23,42,0.8) 20%, transparent 100%)" }}
         />
-        <div className="marquee-track">
-          {[...memories, ...memories].map((item, i) => (
+        <div className="marquee-track" style={{ animationDuration: "40s" }}>
+          {[...memories, ...memories, ...memories].map((item, i) => (
             <MemoryCard key={`r1-${i}`} item={item} index={i % memories.length} />
           ))}
         </div>
       </div>
+      
+      {/* Bottom fade transition to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none" style={{ background: "linear-gradient(to top, #072A63, transparent)" }} />
 
     </section>
   );

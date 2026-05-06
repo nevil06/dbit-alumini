@@ -3,14 +3,22 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import CustomCursor from "@/components/ui/CustomCursor";
+import { useState } from "react";
 
 export default function HeroSection() {
+  const [isHoveringHero, setIsHoveringHero] = useState(false);
+
   return (
     <section
       id="hero"
-      className="relative w-full overflow-hidden"
+      className="relative w-full overflow-hidden cursor-auto md:cursor-none"
       style={{ height: "100svh", minHeight: "600px" }}
+      onMouseEnter={() => setIsHoveringHero(true)}
+      onMouseLeave={() => setIsHoveringHero(false)}
     >
+      {/* Cinematic Custom Cursor (visible only when hovering this section) */}
+      {isHoveringHero && <CustomCursor />}
       {/* ── YouTube video background ── */}
       <div className="hero-video-wrapper">
         <iframe
@@ -85,14 +93,14 @@ export default function HeroSection() {
 
         {/* CTA Buttons */}
         <motion.div
-          className="mt-10 flex flex-col sm:flex-row gap-4 items-center"
+          className="mt-10 flex flex-col sm:flex-row gap-5 items-center justify-center w-full"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.0 }}
         >
           <Link
             href="/members"
-            className="inline-flex items-center justify-center gap-3 px-12 py-5 rounded-full font-bold text-base tracking-wider transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_30px_rgba(244,180,0,0.5)] min-w-[240px]"
+            className="inline-flex items-center justify-center gap-3 px-8 py-4 sm:px-10 sm:py-5 rounded-full font-semibold text-[15px] tracking-wide transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(244,180,0,0.5)] min-w-[240px]"
             style={{
               background: "linear-gradient(135deg, #F4B400 0%, #FFB300 100%)",
               color: "#072A63",
@@ -102,7 +110,7 @@ export default function HeroSection() {
           </Link>
           <Link
             href="/about"
-            className="inline-flex items-center justify-center gap-3 px-12 py-5 rounded-full font-bold text-base tracking-wider text-white transition-all duration-300 hover:scale-105 min-w-[240px]"
+            className="inline-flex items-center justify-center gap-3 px-8 py-4 sm:px-10 sm:py-5 rounded-full font-semibold text-[15px] tracking-wide text-white transition-all duration-300 hover:-translate-y-1 min-w-[240px]"
             style={{
               background: "rgba(255,255,255,0.1)",
               border: "1px solid rgba(255,255,255,0.3)",

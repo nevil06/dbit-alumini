@@ -61,15 +61,15 @@ export default function ImpactStats() {
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 lg:gap-14">
           {impactStats.map((stat, i) => (
             <motion.div
               key={stat.id}
-              className="relative rounded-2xl p-10 lg:p-12 text-center overflow-hidden group"
+              className="relative rounded-[2rem] p-12 lg:p-14 text-center overflow-hidden group shadow-2xl"
               style={{
-                background: "rgba(255,255,255,0.06)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                backdropFilter: "blur(12px)",
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                backdropFilter: "blur(16px)",
               }}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -85,22 +85,22 @@ export default function ImpactStats() {
 
               {/* Icon */}
               <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#F4B400]"
-                style={{ background: "rgba(244,180,0,0.12)", border: "1px solid rgba(244,180,0,0.2)" }}
+                className="w-20 h-20 rounded-[1.25rem] flex items-center justify-center mx-auto mb-8 text-[#F4B400] shadow-inner"
+                style={{ background: "rgba(244,180,0,0.08)", border: "1px solid rgba(244,180,0,0.15)" }}
               >
                 {iconMap[stat.icon]}
               </div>
 
               {/* Counter */}
               <div
-                className="font-[family-name:var(--font-sora)] font-extrabold text-[#F4B400] mb-1"
-                style={{ fontSize: "clamp(1.8rem,4vw,2.8rem)" }}
+                className="font-[family-name:var(--font-sora)] font-extrabold text-[#F4B400] mb-3"
+                style={{ fontSize: "clamp(2.2rem, 5vw, 3.2rem)", letterSpacing: "-0.02em" }}
               >
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
               </div>
 
-              <p className="font-semibold text-white text-sm mb-1">{stat.label}</p>
-              <p className="text-white/45 text-xs leading-relaxed">{stat.description}</p>
+              <p className="font-bold text-white text-base tracking-wide mb-2 uppercase">{stat.label}</p>
+              <p className="text-white/50 text-sm leading-loose max-w-[90%] mx-auto">{stat.description}</p>
             </motion.div>
           ))}
         </div>

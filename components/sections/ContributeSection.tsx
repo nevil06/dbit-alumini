@@ -34,7 +34,7 @@ const ways = [
 export default function ContributeSection() {
   return (
     <section
-      className="py-28 relative overflow-hidden"
+      className="py-[72px] md:py-[90px] lg:py-[120px] relative overflow-hidden"
       style={{ background: "#0F172A" }}
     >
       {/* Background accent */}
@@ -83,11 +83,11 @@ export default function ContributeSection() {
         </motion.div>
 
         {/* Ways grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {ways.map((w, i) => (
             <motion.div
               key={w.title}
-              className="rounded-2xl p-10 group flex flex-col items-start"
+              className="rounded-[2rem] p-10 group flex flex-col items-start"
               style={{
                 background: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.08)",
@@ -105,13 +105,13 @@ export default function ContributeSection() {
               }}
             >
               <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white"
+                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-white"
                 style={{ background: `linear-gradient(135deg, ${w.color}, ${w.color}aa)` }}
               >
                 {w.icon}
               </div>
               <h3
-                className="font-[family-name:var(--font-sora)] font-bold text-white text-base mb-2"
+                className="font-[family-name:var(--font-sora)] font-bold text-white text-lg mb-3"
               >
                 {w.title}
               </h3>
@@ -130,16 +130,16 @@ export default function ContributeSection() {
         >
           <Link
             href="/contribute"
-            className="inline-flex items-center justify-center gap-3 px-12 py-5 rounded-full font-bold text-lg tracking-wider transition-all duration-300 hover:scale-105 hover:shadow-[0_12px_40px_rgba(244,180,0,0.4)] min-w-[280px]"
+            className="inline-flex items-center justify-center gap-3 px-8 py-4 sm:px-10 sm:py-5 rounded-full font-semibold text-[15px] tracking-wide transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(244,180,0,0.4)] min-w-[280px]"
             style={{
               background: "linear-gradient(135deg, #F4B400, #FFB300)",
               color: "#072A63",
             }}
           >
             Start Contributing Today
-            <ArrowRight size={20} />
+            <ArrowRight size={18} />
           </Link>
-          <p className="mt-4 text-white/35 text-xs">
+          <p className="mt-5 text-white/40 text-xs tracking-wide">
             Join 500+ alumni already making a difference
           </p>
         </motion.div>

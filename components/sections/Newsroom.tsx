@@ -8,7 +8,7 @@ import { newsItems } from "@/lib/data/news";
 
 export default function Newsroom() {
   return (
-    <section className="py-28" style={{ background: "#FFFFFF" }}>
+    <section className="py-[72px] md:py-[90px] lg:py-[120px]" style={{ background: "#FFFFFF" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Newsroom"
@@ -96,7 +96,7 @@ export default function Newsroom() {
         </div>
 
         <motion.div
-          className="text-center mt-12"
+          className="text-center mt-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -104,7 +104,7 @@ export default function Newsroom() {
         >
           <Link
             href="/newsroom"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border-2 transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center justify-center gap-3 px-8 py-4 sm:px-10 sm:py-5 rounded-full font-semibold text-[15px] border-2 tracking-wide transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             style={{
               borderColor: "#0B3D91",
               color: "#0B3D91",
@@ -119,7 +119,7 @@ export default function Newsroom() {
             }}
           >
             View All News & Events
-            <ArrowRight size={14} />
+            <ArrowRight size={16} />
           </Link>
         </motion.div>
       </div>

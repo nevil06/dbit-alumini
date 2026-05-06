@@ -37,7 +37,7 @@ const pillars = [
 export default function AlumniAssist() {
   return (
     <section
-      className="py-28"
+      className="py-[72px] md:py-[90px] lg:py-[120px]"
       style={{ background: "#F0F4FF" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,15 +69,15 @@ export default function AlumniAssist() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14">
           {pillars.map((p, i) => (
             <motion.div
               key={p.title}
-              className="rounded-2xl p-8 group card-hover"
+              className="rounded-[2rem] p-10 lg:p-14 group card-hover flex flex-col items-start"
               style={{
                 background: "#FFFFFF",
-                border: "1px solid rgba(11,61,145,0.1)",
-                boxShadow: "0 2px 20px rgba(11,61,145,0.06)",
+                border: "1px solid rgba(11,61,145,0.06)",
+                boxShadow: "0 10px 40px rgba(11,61,145,0.04)",
               }}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -85,18 +85,18 @@ export default function AlumniAssist() {
               transition={{ duration: 0.5, delay: i * 0.12 }}
             >
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-white"
+                className="w-16 h-16 rounded-[1.25rem] flex items-center justify-center mb-8 text-white shadow-sm"
                 style={{ background: `linear-gradient(135deg, ${p.color}, ${p.color}bb)` }}
               >
                 {p.icon}
               </div>
               <h3
-                className="font-[family-name:var(--font-sora)] font-bold text-xl mb-3"
+                className="font-[family-name:var(--font-sora)] font-bold text-2xl mb-4 tracking-tight"
                 style={{ color: "#0F172A" }}
               >
                 {p.title}
               </h3>
-              <p className="text-[#4A5568] text-sm leading-relaxed mb-6">{p.description}</p>
+              <p className="text-[#4A5568] text-base leading-loose mb-8 flex-grow">{p.description}</p>
               <Link
                 href={p.href}
                 className="inline-flex items-center gap-2 text-sm font-semibold transition-all group/link"

@@ -10,7 +10,7 @@ export default function DistinguishedAlumni() {
   const featured = distinguishedAlumni.slice(0, 6);
 
   return (
-    <section className="py-28" style={{ background: "#F8FAFC" }}>
+    <section className="py-[72px] md:py-[90px] lg:py-[120px]" style={{ background: "#F8FAFC" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Distinguished Alumni"
@@ -113,9 +113,8 @@ export default function DistinguishedAlumni() {
           ))}
         </div>
 
-        {/* View All */}
         <motion.div
-          className="text-center mt-12"
+          className="text-center mt-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -123,15 +122,15 @@ export default function DistinguishedAlumni() {
         >
           <Link
             href="/distinguished"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center justify-center gap-3 px-8 py-4 sm:px-10 sm:py-5 rounded-full font-semibold text-[15px] tracking-wide transition-all duration-300 hover:-translate-y-1"
             style={{
               background: "linear-gradient(135deg, #0B3D91, #1565C0)",
               color: "#FFFFFF",
-              boxShadow: "0 4px 20px rgba(11,61,145,0.25)",
+              boxShadow: "0 8px 25px rgba(11,61,145,0.25)",
             }}
           >
             Meet All Distinguished Alumni
-            <ExternalLink size={14} />
+            <ExternalLink size={16} />
           </Link>
         </motion.div>
       </div>

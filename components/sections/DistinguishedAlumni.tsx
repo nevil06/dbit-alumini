@@ -10,15 +10,15 @@ export default function DistinguishedAlumni() {
   const featured = distinguishedAlumni.slice(0, 6);
 
   return (
-    <section className="py-[72px] md:py-[90px] lg:py-[120px]" style={{ background: "#F8FAFC" }}>
-      <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-20 pt-[120px]">
+    <section className="py-[140px]" style={{ background: "#F8FAFC" }}>
+      <div className="max-w-[1280px] mx-auto px-[20px] md:px-[48px] lg:px-[80px] pt-[120px]">
         <SectionHeader
           eyebrow="Distinguished Alumni"
           title="DBITians Who Changed the Game"
           subtitle="From DBIT classrooms to boardrooms, laboratories, and global stages — our alumni are shaping the future."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[32px]">
           {featured.map((alumni, i) => (
             <motion.div
               key={alumni.id}
@@ -41,7 +41,7 @@ export default function DistinguishedAlumni() {
                 }}
               />
 
-              <div className="p-8 flex flex-col h-full text-left">
+              <div className="p-[36px] flex flex-col h-full text-left">
                 {/* Avatar + Name */}
                 <div className="flex flex-row items-center gap-6 mb-8">
                   <div
@@ -51,7 +51,7 @@ export default function DistinguishedAlumni() {
                     {alumni.initials}
                   </div>
                   <div className="flex flex-col items-start text-left">
-                    <h3 className="font-[family-name:var(--font-sora)] font-bold text-gray-900 text-2xl leading-tight mb-2">
+                    <h3 className="font-[family-name:var(--font-sora)] font-bold text-gray-900 text-[24px] leading-tight mb-[24px]">
                       {alumni.name}
                     </h3>
                     <div className="flex justify-start items-center gap-1.5 flex-wrap">
@@ -85,7 +85,7 @@ export default function DistinguishedAlumni() {
                 </div>
 
                 {/* Achievement */}
-                <p className="text-base leading-relaxed mb-8 text-left" style={{ color: "#4A5568" }}>
+                <p className="text-[16px] leading-[1.7] mt-[16px] mb-8 text-left" style={{ color: "#4A5568" }}>
                   {alumni.achievement}
                 </p>
 

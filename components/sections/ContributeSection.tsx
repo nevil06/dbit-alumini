@@ -49,7 +49,7 @@ export default function ContributeSection() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-[20px] md:px-[48px] lg:px-[80px] relative z-10">
+      <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-20 relative z-10">
         {/* Header */}
         <motion.div
           className="text-center mb-16 max-w-4xl mx-auto flex flex-col items-center justify-center w-full"
@@ -81,11 +81,11 @@ export default function ContributeSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px] md:gap-[24px] lg:gap-[32px] mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {ways.map((w, i) => (
             <motion.div
               key={w.title}
-              className="rounded-[2rem] p-[32px] group flex flex-col items-start"
+              className="rounded-[2rem] p-8 group flex flex-col items-start"
               style={{
                 background: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.08)",
@@ -103,7 +103,7 @@ export default function ContributeSection() {
               }}
             >
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-[20px] text-white"
+                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-white"
                 style={{ background: `linear-gradient(135deg, ${w.color}, ${w.color}aa)` }}
               >
                 {w.icon}

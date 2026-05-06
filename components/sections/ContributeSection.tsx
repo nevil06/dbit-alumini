@@ -1,0 +1,155 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { GraduationCap, Mic, HandHeart, Users, ArrowRight } from "lucide-react";
+
+const ways = [
+  {
+    icon: <Users size={24} />,
+    title: "Mentorship",
+    description: "Guide current students with your industry experience and help shape the next generation of engineers.",
+    color: "#0B3D91",
+  },
+  {
+    icon: <GraduationCap size={24} />,
+    title: "Scholarships",
+    description: "Sponsor deserving students by funding scholarships that can transform their academic journey.",
+    color: "#1565C0",
+  },
+  {
+    icon: <Mic size={24} />,
+    title: "Guest Lectures",
+    description: "Share your expertise by delivering talks, workshops, and sessions to inspire students on campus.",
+    color: "#072A63",
+  },
+  {
+    icon: <HandHeart size={24} />,
+    title: "Placement Support",
+    description: "Refer, recruit, and advocate for DBIT students in your organization to boost placement outcomes.",
+    color: "#0B3D91",
+  },
+];
+
+export default function ContributeSection() {
+  return (
+    <section
+      className="py-24 relative overflow-hidden"
+      style={{ background: "#0F172A" }}
+    >
+      {/* Background accent */}
+      <div
+        className="absolute top-0 left-0 right-0 h-px"
+        style={{ background: "linear-gradient(90deg, transparent, rgba(244,180,0,0.5), transparent)" }}
+      />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at 70% 50%, rgba(11,61,145,0.25) 0%, transparent 70%)",
+        }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-16 max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <span
+            className="inline-block text-xs font-semibold tracking-[0.2em] uppercase mb-4 px-3 py-1 rounded-full"
+            style={{
+              color: "#F4B400",
+              background: "rgba(244,180,0,0.12)",
+              border: "1px solid rgba(244,180,0,0.25)",
+            }}
+          >
+            Give Back
+          </span>
+          <h2
+            className="font-[family-name:var(--font-sora)] font-extrabold text-white leading-tight"
+            style={{ fontSize: "clamp(1.8rem,4.5vw,3.2rem)" }}
+          >
+            Give Back to the Institution{" "}
+            <span className="gradient-text">That Shaped Your Journey</span>
+          </h2>
+          <p className="mt-5 text-white/60 leading-relaxed text-base">
+            DBIT gave you the foundation. Now, you have the power to build the same foundation
+            for the students who walk those corridors today. Every contribution — big or small — creates a lasting impact.
+          </p>
+        </motion.div>
+
+        {/* Ways grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+          {ways.map((w, i) => (
+            <motion.div
+              key={w.title}
+              className="rounded-2xl p-6 group"
+              style={{
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                backdropFilter: "blur(8px)",
+              }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileHover={{
+                y: -4,
+                background: "rgba(255,255,255,0.08)",
+                borderColor: "rgba(244,180,0,0.25)",
+                transition: { duration: 0.2 },
+              }}
+            >
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white"
+                style={{ background: `linear-gradient(135deg, ${w.color}, ${w.color}aa)` }}
+              >
+                {w.icon}
+              </div>
+              <h3
+                className="font-[family-name:var(--font-sora)] font-bold text-white text-base mb-2"
+              >
+                {w.title}
+              </h3>
+              <p className="text-white/50 text-sm leading-relaxed">{w.description}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+        >
+          <Link
+            href="/contribute"
+            className="inline-flex items-center gap-3 px-10 py-4 rounded-full font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-[0_12px_40px_rgba(244,180,0,0.4)]"
+            style={{
+              background: "linear-gradient(135deg, #F4B400, #FFB300)",
+              color: "#072A63",
+            }}
+          >
+            Start Contributing Today
+            <ArrowRight size={18} />
+          </Link>
+          <p className="mt-4 text-white/35 text-xs">
+            Join 500+ alumni already making a difference
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Bottom accent */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-px"
+        style={{ background: "linear-gradient(90deg, transparent, rgba(244,180,0,0.3), transparent)" }}
+      />
+    </section>
+  );
+}

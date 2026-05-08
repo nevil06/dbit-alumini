@@ -70,7 +70,7 @@ function MemoryCard({ item, index }: { item: typeof memories[0]; index: number }
 export default function MemoriesMarquee() {
   return (
     <section
-      className="pt-12 pb-24 overflow-hidden"
+      className="relative pt-12 pb-24 overflow-hidden"
       style={{ background: "#0F172A" }}
       aria-label="Alumni Memories Gallery"
     >
@@ -115,6 +115,7 @@ export default function MemoriesMarquee() {
       {/* Bottom fade transition to next section */}
       <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none" style={{ background: "linear-gradient(to top, #072A63, transparent)" }} />
 
+      <div className="h-16" />
     </section>
   );
 }

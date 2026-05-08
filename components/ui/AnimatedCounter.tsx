@@ -17,11 +17,16 @@ export default function AnimatedCounter({
   duration = 2000,
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
+  const [mounted, setMounted] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   useEffect(() => {
-    if (!isInView) return;
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted || !isInView) return;
 
     let startTime: number | null = null;
     const startValue = 0;
@@ -36,7 +41,7 @@ export default function AnimatedCounter({
     };
 
     requestAnimationFrame(step);
-  }, [isInView, value, duration]);
+  }, [mounted, isInView, value, duration]);
 
   return (
     <span ref={ref}>

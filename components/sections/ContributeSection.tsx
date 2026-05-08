@@ -34,7 +34,7 @@ const ways = [
 export default function ContributeSection() {
   return (
     <section
-      className="py-[140px] relative overflow-hidden"
+      className="py-20 md:py-28 relative overflow-hidden"
       style={{ background: "#0F172A" }}
     >
       <div
@@ -49,7 +49,7 @@ export default function ContributeSection() {
         }}
       />
 
-      <div className="max-w-[1280px] mx-auto px-[20px] md:px-[48px] lg:px-[80px] relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
           className="text-center mb-16 max-w-4xl mx-auto flex flex-col items-center justify-center w-full"
@@ -73,7 +73,7 @@ export default function ContributeSection() {
             style={{ fontSize: "clamp(1.8rem,4.5vw,3.2rem)" }}
           >
             Give Back to the Institution <br />
-            <span className="gradient-text block mt-2">That Shaped Your Journey</span>
+            <span className="gradient-text block text-center w-full mt-2">That Shaped Your Journey</span>
           </h2>
           <p className="mt-5 text-white/60 leading-relaxed text-base text-center w-full block">
             DBIT gave you the foundation. Now, you have the power to build the same foundation
@@ -81,11 +81,11 @@ export default function ContributeSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[32px] mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {ways.map((w, i) => (
             <motion.div
               key={w.title}
-              className="rounded-[2rem] p-[36px] group flex flex-col items-start"
+              className="rounded-2xl p-6 group flex flex-col items-start"
               style={{
                 background: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.08)",
@@ -103,17 +103,17 @@ export default function ContributeSection() {
               }}
             >
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-[20px] text-white"
+                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 text-white"
                 style={{ background: `linear-gradient(135deg, ${w.color}, ${w.color}aa)` }}
               >
                 {w.icon}
               </div>
               <h3
-                className="font-[family-name:var(--font-sora)] font-bold text-white text-[1.1rem] mb-[24px] mt-2"
+                className="font-[family-name:var(--font-sora)] font-bold text-white text-xl mb-3"
               >
                 {w.title}
               </h3>
-              <p className="text-white/50 text-[16px] leading-[1.7] mt-[16px]">{w.description}</p>
+              <p className="text-white/50 text-sm leading-relaxed">{w.description}</p>
             </motion.div>
           ))}
         </div>

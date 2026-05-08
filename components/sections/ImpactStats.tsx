@@ -17,7 +17,7 @@ const iconMap: Record<string, React.ReactNode> = {
 export default function ImpactStats() {
   return (
     <section
-      className="py-[140px] relative overflow-hidden"
+      className="py-20 md:py-28 pb-32 relative overflow-hidden"
       style={{ background: "linear-gradient(160deg, #072A63 0%, #0B3D91 50%, #0F172A 100%)" }}
     >
       {/* Decorative circles */}
@@ -30,7 +30,7 @@ export default function ImpactStats() {
         style={{ background: "radial-gradient(circle, #F4B400 0%, transparent 70%)" }}
       />
 
-      <div className="max-w-[1280px] mx-auto px-[20px] md:px-[48px] lg:px-[80px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           className="text-center mb-16 flex flex-col items-center justify-center w-full"
@@ -61,11 +61,11 @@ export default function ImpactStats() {
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[32px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {impactStats.map((stat, i) => (
             <motion.div
               key={stat.id}
-              className="relative rounded-[2rem] p-[36px] text-center overflow-hidden group shadow-2xl"
+              className="relative rounded-2xl p-6 text-center overflow-hidden group shadow-2xl"
               style={{
                 background: "rgba(255,255,255,0.04)",
                 border: "1px solid rgba(255,255,255,0.08)",
@@ -85,7 +85,7 @@ export default function ImpactStats() {
 
               {/* Icon */}
               <div
-                className="w-16 h-16 rounded-[1.25rem] flex items-center justify-center mx-auto mb-[20px] text-[#F4B400] shadow-inner"
+                className="w-16 h-16 rounded-[1.25rem] flex items-center justify-center mx-auto mb-4 text-[#F4B400] shadow-inner"
                 style={{ background: "rgba(244,180,0,0.08)", border: "1px solid rgba(244,180,0,0.15)" }}
               >
                 {iconMap[stat.icon]}
@@ -99,12 +99,18 @@ export default function ImpactStats() {
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
               </div>
 
-              <p className="font-bold text-white text-[18px] tracking-wide mb-[24px] uppercase">{stat.label}</p>
-              <p className="text-white/50 text-[16px] leading-[1.7] max-w-[90%] mx-auto mt-[16px]">{stat.description}</p>
+              <p className="font-bold text-white text-xl tracking-wide mb-3 uppercase">{stat.label}</p>
+              <p className="text-white/50 text-sm leading-relaxed max-w-[90%] mx-auto">{stat.description}</p>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Bottom fade to next section */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
+        style={{ background: "linear-gradient(to bottom, transparent, #F8FAFC)" }}
+      />
     </section>
   );
 }

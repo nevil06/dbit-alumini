@@ -10,15 +10,15 @@ export default function DistinguishedAlumni() {
   const featured = distinguishedAlumni.slice(0, 6);
 
   return (
-    <section className="py-[140px]" style={{ background: "#F8FAFC" }}>
-      <div className="max-w-[1280px] mx-auto px-[20px] md:px-[48px] lg:px-[80px] pt-[120px]">
+    <section className="py-20 md:py-28" style={{ background: "#F8FAFC" }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Distinguished Alumni"
           title="DBITians Who Changed the Game"
           subtitle="From DBIT classrooms to boardrooms, laboratories, and global stages — our alumni are shaping the future."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[32px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {featured.map((alumni, i) => (
             <motion.div
               key={alumni.id}
@@ -41,9 +41,9 @@ export default function DistinguishedAlumni() {
                 }}
               />
 
-              <div className="p-[36px] flex flex-col h-full text-left">
+              <div className="p-8 flex flex-col h-full text-left">
                 {/* Avatar + Name */}
-                <div className="flex flex-row items-center gap-6 mb-8">
+                <div className="flex flex-row items-center gap-5 mb-5">
                   <div
                     className="w-20 h-20 rounded-full flex items-center justify-center text-white font-bold text-2xl flex-shrink-0 shadow-md font-[family-name:var(--font-sora)]"
                     style={{ background: `linear-gradient(135deg, ${alumni.color}, ${alumni.color}bb)` }}
@@ -51,7 +51,7 @@ export default function DistinguishedAlumni() {
                     {alumni.initials}
                   </div>
                   <div className="flex flex-col items-start text-left">
-                    <h3 className="font-[family-name:var(--font-sora)] font-bold text-gray-900 text-[24px] leading-tight mb-[24px]">
+                    <h3 className="font-[family-name:var(--font-sora)] font-bold text-gray-900 text-xl leading-tight mb-2">
                       {alumni.name}
                     </h3>
                     <div className="flex justify-start items-center gap-1.5 flex-wrap">
@@ -72,7 +72,7 @@ export default function DistinguishedAlumni() {
 
                 {/* Company */}
                 <div
-                  className="flex flex-row items-center justify-start gap-4 mb-6 px-6 py-4 rounded-xl w-full"
+                  className="flex flex-row items-center justify-start gap-4 mb-4 px-4 py-3 rounded-xl w-full"
                   style={{ background: "rgba(11,61,145,0.04)" }}
                 >
                   <Building2 size={24} style={{ color: "#0B3D91" }} className="flex-shrink-0" />
@@ -85,7 +85,7 @@ export default function DistinguishedAlumni() {
                 </div>
 
                 {/* Achievement */}
-                <p className="text-[16px] leading-[1.7] mt-[16px] mb-8 text-left" style={{ color: "#4A5568" }}>
+                <p className="text-sm leading-relaxed mb-5 text-left" style={{ color: "#4A5568" }}>
                   {alumni.achievement}
                 </p>
 
@@ -95,7 +95,7 @@ export default function DistinguishedAlumni() {
                     href={alumni.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 text-sm font-bold transition-all duration-200 group/link mt-auto w-max px-6 py-3 rounded-lg hover:bg-gray-50"
+                    className="inline-flex items-center justify-center gap-2 text-sm font-bold transition-all duration-200 group/link mt-4 w-max px-6 py-3 rounded-lg hover:bg-gray-50"
                     style={{ color: "#0B3D91", border: "1px solid rgba(11,61,145,0.1)" }}
                   >
                     <span>Visit Venture</span>

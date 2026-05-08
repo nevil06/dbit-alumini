@@ -16,8 +16,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function ImpactStats() {
   return (
-    <section
-      className="py-20 md:py-28 pb-32 relative overflow-hidden"
+    <section className="py-32 md:py-48 relative overflow-hidden"
       style={{ background: "linear-gradient(160deg, #072A63 0%, #0B3D91 50%, #0F172A 100%)" }}
     >
       {/* Decorative circles */}
@@ -104,13 +103,9 @@ export default function ImpactStats() {
             </motion.div>
           ))}
         </div>
-      </div>
 
-      {/* Bottom fade to next section */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, transparent, #F8FAFC)" }}
-      />
+        
+      </div>
     </section>
   );
 }

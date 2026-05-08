@@ -33,8 +33,7 @@ const ways = [
 
 export default function ContributeSection() {
   return (
-    <section
-      className="py-20 md:py-28 relative overflow-hidden"
+    <section className="py-32 md:py-48 relative overflow-hidden"
       style={{ background: "#0F172A" }}
     >
       <div

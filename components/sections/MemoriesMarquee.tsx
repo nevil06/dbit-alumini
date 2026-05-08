@@ -69,8 +69,7 @@ function MemoryCard({ item, index }: { item: typeof memories[0]; index: number }
 
 export default function MemoriesMarquee() {
   return (
-    <section
-      className="relative pt-12 pb-24 overflow-hidden"
+    <section className="py-32 md:py-48 relative overflow-hidden"
       style={{ background: "#0F172A" }}
       aria-label="Alumni Memories Gallery"
     >

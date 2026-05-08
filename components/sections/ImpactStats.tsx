@@ -55,13 +55,13 @@ export default function ImpactStats() {
           >
             Our Alumni Impact, Worldwide
           </h2>
-          <p className="mt-5 text-white/60 max-w-xl mx-auto text-base text-center w-full block">
+          <p className="mt-5 text-white/60 max-w-xl text-base leading-relaxed">
             A community of changemakers, innovators, and leaders — united by the DBITian spirit.
           </p>
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {impactStats.map((stat, i) => (
             <motion.div
               key={stat.id}
@@ -99,8 +99,8 @@ export default function ImpactStats() {
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
               </div>
 
-              <p className="font-bold text-white text-xl tracking-wide mb-3 uppercase">{stat.label}</p>
-              <p className="text-white/50 text-sm leading-relaxed max-w-[90%] mx-auto">{stat.description}</p>
+              <p className="font-bold text-white text-lg tracking-wide mb-2 uppercase">{stat.label}</p>
+              <p className="text-white/50 text-sm leading-relaxed">{stat.description}</p>
             </motion.div>
           ))}
         </div>

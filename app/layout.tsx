@@ -43,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sora.variable} ${inter.variable}`}>
+    <html lang="en" className={`${sora.variable} ${inter.variable} bg-[#F8FAFC]`}>
       <body className="font-[family-name:var(--font-inter)] antialiased">
         {children}
       </body>

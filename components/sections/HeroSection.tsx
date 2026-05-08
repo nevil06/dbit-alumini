@@ -93,7 +93,7 @@ export default function HeroSection() {
 
         {/* CTA Buttons */}
         <motion.div
-          className="mt-10 flex flex-col sm:flex-row gap-5 items-center justify-center w-full"
+          className="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-5 items-center justify-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.0 }}
@@ -123,7 +123,7 @@ export default function HeroSection() {
 
         {/* Stats ribbon */}
         <motion.div
-          className="mt-14 flex flex-wrap items-center justify-center gap-8"
+          className="mt-12 sm:mt-14 flex flex-wrap items-center justify-center gap-6 sm:gap-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.3 }}

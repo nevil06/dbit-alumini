@@ -18,7 +18,7 @@ export default function DistinguishedAlumni() {
           subtitle="From DBIT classrooms to boardrooms, laboratories, and global stages — our alumni are shaping the future."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {featured.map((alumni, i) => (
             <motion.div
               key={alumni.id}

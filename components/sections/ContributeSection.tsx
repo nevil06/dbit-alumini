@@ -69,19 +69,19 @@ export default function ContributeSection() {
             Give Back
           </span>
           <h2
-            className="font-[family-name:var(--font-sora)] font-extrabold text-white leading-tight text-center w-full block"
+            className="font-[family-name:var(--font-sora)] font-extrabold text-white leading-tight"
             style={{ fontSize: "clamp(1.8rem,4.5vw,3.2rem)" }}
           >
             Give Back to the Institution <br />
-            <span className="gradient-text block text-center w-full mt-2">That Shaped Your Journey</span>
+            <span className="gradient-text mt-2">That Shaped Your Journey</span>
           </h2>
-          <p className="mt-5 text-white/60 leading-relaxed text-base text-center w-full block">
+          <p className="mt-5 text-white/60 leading-relaxed text-base max-w-2xl">
             DBIT gave you the foundation. Now, you have the power to build the same foundation
             for the students who walk those corridors today. Every contribution — big or small — creates a lasting impact.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 mb-12">
           {ways.map((w, i) => (
             <motion.div
               key={w.title}

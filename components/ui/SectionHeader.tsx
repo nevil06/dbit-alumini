@@ -69,7 +69,7 @@ export default function SectionHeader({
       </motion.div>
       {subtitle && (
         <p
-          className="leading-relaxed max-w-4xl mx-auto text-center w-full block"
+          className={`leading-relaxed max-w-2xl ${centered ? "mx-auto text-center" : ""}`}
           style={{
             color: light ? "rgba(255,255,255,0.72)" : "#4A5568",
             fontSize: "clamp(0.95rem, 1.8vw, 1.1rem)",

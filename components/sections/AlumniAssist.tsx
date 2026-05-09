@@ -36,12 +36,12 @@ const pillars = [
 
 export default function AlumniAssist() {
   return (
-    <section className="py-32 md:py-48 md:"
+    <section className="py-32 md:py-48"
       style={{ background: "#F0F4FF" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-14"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -58,25 +58,25 @@ export default function AlumniAssist() {
             Alumni Assist
           </span>
           <h2
-            className="font-[family-name:var(--font-sora)] font-bold"
+            className="font-[family-name:var(--font-sora)] font-bold mb-4"
             style={{ color: "#072A63", fontSize: "clamp(1.8rem,4vw,3rem)" }}
           >
             Your Network is Your Net Worth
           </h2>
-          <p className="mt-4 text-[#4A5568] max-w-xl mx-auto">
+          <p className="text-[#4A5568] max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
             Leverage the DBIT alumni ecosystem for career growth, mentorship, and lifelong professional connections.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {pillars.map((p, i) => (
             <motion.div
               key={p.title}
-              className="rounded-2xl p-6 group card-hover flex flex-col items-start"
+              className="rounded-2xl p-8 group card-hover flex flex-col items-start"
               style={{
                 background: "#FFFFFF",
-                border: "1px solid rgba(11,61,145,0.06)",
-                boxShadow: "0 10px 40px rgba(11,61,145,0.04)",
+                border: "1px solid rgba(11,61,145,0.08)",
+                boxShadow: "0 4px 24px rgba(11,61,145,0.06)",
               }}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -84,18 +84,18 @@ export default function AlumniAssist() {
               transition={{ duration: 0.5, delay: i * 0.12 }}
             >
               <div
-                className="w-16 h-16 rounded-[1.25rem] flex items-center justify-center mb-4 text-white shadow-sm"
+                className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 text-white"
                 style={{ background: `linear-gradient(135deg, ${p.color}, ${p.color}bb)` }}
               >
                 {p.icon}
               </div>
               <h3
-                className="font-[family-name:var(--font-sora)] font-bold text-xl mb-3 tracking-tight"
+                className="font-[family-name:var(--font-sora)] font-bold text-lg mb-2 tracking-tight"
                 style={{ color: "#0F172A" }}
               >
                 {p.title}
               </h3>
-              <p className="text-[#4A5568] text-sm leading-relaxed mb-8 flex-grow">{p.description}</p>
+              <p className="text-[#4A5568] text-sm leading-relaxed mb-6 flex-grow">{p.description}</p>
               <Link
                 href={p.href}
                 className="inline-flex items-center gap-2 text-sm font-semibold transition-all group/link mt-auto"

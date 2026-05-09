@@ -77,7 +77,7 @@ export default function DistinguishedAlumni() {
         </div>
 
         <motion.div
-          className="text-center mt-[100px]"
+          className="text-center mt-20 mb-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

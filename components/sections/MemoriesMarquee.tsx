@@ -1,120 +1,106 @@
 "use client";
 
+import SectionHeader from "@/components/ui/SectionHeader";
+
 const memories = [
-  { label: "MILAN Reunion", color: "#0B3D91", year: "2024" },
-  { label: "Graduation Day", color: "#072A63", year: "2025" },
-  { label: "Alumni Cricket", color: "#1565C0", year: "2023" },
-  { label: "Tech Workshop", color: "#0B3D91", year: "2024" },
-  { label: "Kannadotsava", color: "#072A63", year: "2021" },
-  { label: "Campus Life", color: "#1565C0", year: "2022" },
-  { label: "MILAN 2022", color: "#0B3D91", year: "2022" },
-  { label: "Award Ceremony", color: "#072A63", year: "2025" },
-  { label: "Hackathon", color: "#1565C0", year: "2023" },
-  { label: "Cultural Fest", color: "#0B3D91", year: "2022" },
-  { label: "Industry Visit", color: "#072A63", year: "2024" },
-  { label: "Sports Meet", color: "#1565C0", year: "2023" },
+  { label: "MILAN Reunion", year: "2024" },
+  { label: "Graduation Day", year: "2025" },
+  { label: "Alumni Cricket", year: "2023" },
+  { label: "Tech Workshop", year: "2024" },
+  { label: "Kannadotsava", year: "2021" },
+  { label: "Campus Life", year: "2022" },
+  { label: "MILAN 2022", year: "2022" },
+  { label: "Award Ceremony", year: "2025" },
+  { label: "Hackathon", year: "2023" },
+  { label: "Cultural Fest", year: "2022" },
+  { label: "Industry Visit", year: "2024" },
+  { label: "Sports Meet", year: "2023" },
 ];
 
-const row2 = [...memories].reverse();
-
-// Gradient placeholder card when real images aren't available
 function MemoryCard({ item, index }: { item: typeof memories[0]; index: number }) {
   const patterns = [
-    "radial-gradient(circle at 30% 40%, #0B3D91 0%, #072A63 60%, #0A1628 100%)",
-    "radial-gradient(circle at 70% 60%, #1565C0 0%, #0B3D91 50%, #072A63 100%)",
-    "linear-gradient(135deg, #072A63 0%, #0B3D91 50%, #1565C0 100%)",
-    "radial-gradient(ellipse at 50% 20%, #1E3A8A 0%, #0B3D91 40%, #0A1628 100%)",
+    "linear-gradient(135deg, #173676 0%, #0E295E 100%)",
+    "linear-gradient(135deg, #214A94 0%, #102A59 100%)",
+    "linear-gradient(135deg, #143B7A 0%, #112345 100%)",
+    "linear-gradient(135deg, #264F8F 0%, #162A52 100%)",
   ];
 
-  const icons = ["🎓", "🏏", "🚀", "🏆", "🎭", "💡", "🤝", "📸", "⚡", "🌟", "🎯", "🏅"];
+  const accents = ["Archive", "Reunion", "Campus", "Community"];
 
   return (
     <div
-      className="relative flex-shrink-0 rounded-2xl overflow-hidden group cursor-pointer"
+      className="relative flex-shrink-0 rounded-3xl overflow-hidden group transition-all duration-500 hover:-translate-y-2"
       style={{
-        width: "220px",
-        height: "160px",
-        marginRight: "16px",
+        width: "260px",
+        height: "164px",
+        marginRight: "18px",
         background: patterns[index % patterns.length],
+        border: "1px solid rgba(255,255,255,0.08)",
+        boxShadow: "0 20px 40px rgba(2,6,23,0.18)",
       }}
     >
-      {/* Overlay on hover */}
       <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{ background: "rgba(244,180,0,0.15)" }}
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.08))" }}
       />
 
-      {/* Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
-        <span className="text-4xl mb-2">{icons[index % icons.length]}</span>
-        <p className="font-[family-name:var(--font-sora)] font-bold text-white text-sm text-center leading-tight">
-          {item.label}
-        </p>
-        <span
-          className="mt-1.5 text-[10px] font-medium px-2 py-0.5 rounded-full"
-          style={{ background: "rgba(244,180,0,0.25)", color: "#F4B400" }}
-        >
-          {item.year}
+      <div className="absolute inset-0 flex flex-col justify-between p-6">
+        <span className="text-[10px] uppercase tracking-[0.22em] text-white/55">
+          {accents[index % accents.length]}
         </span>
+        <div className="space-y-3">
+          <p className="font-[family-name:var(--font-sora)] font-semibold text-white text-2xl leading-tight">
+            {item.label}
+          </p>
+          <span
+            className="inline-flex text-[11px] font-medium px-3 py-1 rounded-full"
+            style={{ background: "rgba(244,180,0,0.16)", color: "#F4B400" }}
+          >
+            {item.year}
+          </span>
+        </div>
       </div>
-
-      {/* Shimmer line */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
-        style={{ background: "linear-gradient(90deg,#F4B400,#FFD54F)" }}
-      />
     </div>
   );
 }
 
 export default function MemoriesMarquee() {
   return (
-    <section className="py-32 md:py-48 relative overflow-hidden"
-      style={{ background: "#0F172A" }}
+    <section
+      className="section-shell relative overflow-hidden"
+      style={{ background: "linear-gradient(180deg, #0F172A 0%, #13213A 100%)" }}
       aria-label="Alumni Memories Gallery"
     >
-      {/* Header */}
-      <div className="text-center mb-8 px-4">
-        <span
-          className="inline-block text-xs font-semibold tracking-[0.2em] uppercase mb-2 px-3 py-1 rounded-full"
-          style={{
-            color: "#F4B400",
-            background: "rgba(244,180,0,0.12)",
-            border: "1px solid rgba(244,180,0,0.2)",
-          }}
-        >
-          Memories
-        </span>
-        <h2
-          className="font-[family-name:var(--font-sora)] font-bold text-white"
-          style={{ fontSize: "clamp(1.4rem,3vw,2rem)" }}
-        >
-          Nostalgia in Every Frame
-        </h2>
-      </div>
+      <div
+        className="absolute inset-x-0 top-0 h-px"
+        style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent)" }}
+      />
 
-      {/* Row 1 — Left to Right */}
-      <div className="marquee-container relative mb-12 shadow-2xl">
-        {/* Edge fades for cinematic marquee effect */}
-        <div
-          className="absolute left-0 top-0 bottom-0 w-32 md:w-48 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to right, #0F172A 0%, rgba(15,23,42,0.8) 20%, transparent 100%)" }}
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 w-full">
+        <SectionHeader
+          eyebrow="Memories"
+          title="Moments That Still Hold the Campus Together"
+          subtitle="A quieter look at the reunions, traditions, and milestones that keep the alumni story alive."
+          light
         />
-        <div
-          className="absolute right-0 top-0 bottom-0 w-32 md:w-48 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to left, #0F172A 0%, rgba(15,23,42,0.8) 20%, transparent 100%)" }}
-        />
-        <div className="marquee-track" style={{ animationDuration: "40s" }}>
-          {[...memories, ...memories, ...memories].map((item, i) => (
-            <MemoryCard key={`r1-${i}`} item={item} index={i % memories.length} />
-          ))}
+
+        <div className="marquee-container relative">
+          <div
+            className="absolute left-0 top-0 bottom-0 w-20 md:w-32 z-10 pointer-events-none"
+            style={{ background: "linear-gradient(to right, #0F172A 0%, rgba(15,23,42,0.88) 25%, transparent 100%)" }}
+          />
+          <div
+            className="absolute right-0 top-0 bottom-0 w-20 md:w-32 z-10 pointer-events-none"
+            style={{ background: "linear-gradient(to left, #13213A 0%, rgba(19,33,58,0.88) 25%, transparent 100%)" }}
+          />
+
+          <div className="marquee-track" style={{ animationDuration: "48s" }}>
+            {[...memories, ...memories, ...memories].map((item, i) => (
+              <MemoryCard key={`r1-${i}`} item={item} index={i % memories.length} />
+            ))}
+          </div>
         </div>
       </div>
-      
-      {/* Bottom fade transition to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none" style={{ background: "linear-gradient(to top, #072A63, transparent)" }} />
-
-      <div className="h-16" />
     </section>
   );
 }

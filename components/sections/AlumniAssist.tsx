@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Briefcase, Users, Lightbulb, ArrowRight } from "lucide-react";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 const pillars = [
   {
@@ -12,7 +13,7 @@ const pillars = [
       "Alumni-exclusive job postings from companies founded or led by DBITians. Refer, hire, and grow together.",
     cta: "Browse Opportunities",
     href: "/alumni-assist",
-    color: "#0B3D91",
+    color: "#142B6F",
   },
   {
     icon: <Users size={28} />,
@@ -21,7 +22,7 @@ const pillars = [
       "Connect with experienced alumni mentors for career guidance, startup advice, and professional development.",
     cta: "Find a Mentor",
     href: "/alumni-assist",
-    color: "#1565C0",
+    color: "#0B3D91",
   },
   {
     icon: <Lightbulb size={28} />,
@@ -30,86 +31,60 @@ const pillars = [
       "Build lasting professional relationships with 10,000+ DBITians across 18 countries.",
     cta: "Join the Network",
     href: "/members",
-    color: "#072A63",
+    color: "#234B8F",
   },
 ];
 
 export default function AlumniAssist() {
   return (
-    <section className="py-32 md:py-48 md:"
-      style={{ background: "#F0F4FF" }}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          className="text-center mb-14"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <span
-            className="inline-block text-xs font-semibold tracking-[0.2em] uppercase mb-3 px-3 py-1 rounded-full"
-            style={{
-              color: "#0B3D91",
-              background: "rgba(11,61,145,0.08)",
-              border: "1px solid rgba(11,61,145,0.2)",
-            }}
-          >
-            Alumni Assist
-          </span>
-          <h2
-            className="font-[family-name:var(--font-sora)] font-bold"
-            style={{ color: "#072A63", fontSize: "clamp(1.8rem,4vw,3rem)" }}
-          >
-            Your Network is Your Net Worth
-          </h2>
-          <p className="mt-4 text-[#4A5568] max-w-xl mx-auto">
-            Leverage the DBIT alumni ecosystem for career growth, mentorship, and lifelong professional connections.
-          </p>
-        </motion.div>
+    <section className="section-shell" style={{ background: "#FFFFFF" }}>
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 w-full">
+        <SectionHeader
+          eyebrow="Alumni Assist"
+          title="Your Network Should Feel Useful, Not Distant"
+          subtitle="Use the alumni ecosystem for career support, mentorship, and meaningful professional connections."
+        />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {pillars.map((p, i) => (
-            <motion.div
-              key={p.title}
-              className="rounded-2xl p-6 group card-hover flex flex-col items-start"
-              style={{
-                background: "#FFFFFF",
-                border: "1px solid rgba(11,61,145,0.06)",
-                boxShadow: "0 10px 40px rgba(11,61,145,0.04)",
-              }}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.12 }}
-            >
-              <div
-                className="w-16 h-16 rounded-[1.25rem] flex items-center justify-center mb-4 text-white shadow-sm"
-                style={{ background: `linear-gradient(135deg, ${p.color}, ${p.color}bb)` }}
+              <motion.div
+                key={p.title}
+                className="group rounded-3xl premium-card p-8 transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.1 }}
               >
-                {p.icon}
-              </div>
-              <h3
-                className="font-[family-name:var(--font-sora)] font-bold text-xl mb-3 tracking-tight"
-                style={{ color: "#0F172A" }}
-              >
-                {p.title}
-              </h3>
-              <p className="text-[#4A5568] text-sm leading-relaxed mb-8 flex-grow">{p.description}</p>
-              <Link
-                href={p.href}
-                className="inline-flex items-center gap-2 text-sm font-semibold transition-all group/link mt-auto"
-                style={{ color: p.color }}
-              >
-                {p.cta}
-                <ArrowRight
-                  size={14}
-                  className="group-hover/link:translate-x-1 transition-transform"
-                />
-              </Link>
-            </motion.div>
-          ))}
-        </div>
+                <div className="space-y-6 flex flex-col items-center text-center">
+                  <div
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center text-white mx-auto"
+                    style={{ background: `linear-gradient(135deg, ${p.color} 0%, ${p.color}dd 100%)` }}
+                  >
+                    {p.icon}
+                  </div>
+
+                  <div className="space-y-3">
+                    <h3 className="text-2xl font-bold tracking-tight text-[#142B6F]">
+                      {p.title}
+                    </h3>
+
+                    <p className="text-lg leading-relaxed text-slate-600">
+                      {p.description}
+                    </p>
+                  </div>
+                </div>
+
+                <Link
+                  href={p.href}
+                  className="inline-flex items-center justify-center gap-2 text-sm font-semibold transition-all mt-8 mx-auto"
+                  style={{ color: p.color }}
+                >
+                  {p.cta}
+                  <ArrowRight size={14} />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
       </div>
     </section>
   );

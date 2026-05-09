@@ -19,7 +19,7 @@ export default function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <motion.div
-      className={`mb-14 ${centered ? "text-center flex flex-col items-center justify-center w-full" : "text-left"}`}
+      className={`mb-12 ${centered ? "text-center flex flex-col items-center justify-center w-full mx-auto" : "text-left"}`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
@@ -27,27 +27,28 @@ export default function SectionHeader({
     >
       {eyebrow && (
         <span
-          className="inline-block text-xs font-semibold tracking-[0.2em] uppercase mb-3 px-3 py-1 rounded-full"
+          className="inline-block text-[11px] font-semibold tracking-[0.18em] uppercase mb-4 px-3 py-1 rounded-full"
           style={{
-            color: "#F4B400",
-            background: "rgba(244, 180, 0, 0.12)",
-            border: "1px solid rgba(244, 180, 0, 0.25)",
+            color: light ? "#F4B400" : "#0B3D91",
+            background: light ? "rgba(244, 180, 0, 0.12)" : "rgba(11, 61, 145, 0.07)",
+            border: light
+              ? "1px solid rgba(244, 180, 0, 0.25)"
+              : "1px solid rgba(11, 61, 145, 0.12)",
           }}
         >
           {eyebrow}
         </span>
       )}
       <h2
-        className="font-[family-name:var(--font-sora)] font-bold leading-tight"
+        className={`font-[family-name:var(--font-sora)] font-semibold leading-[1.08] text-4xl md:text-5xl max-w-4xl ${centered ? "mx-auto text-center" : ""}`}
         style={{
-          fontSize: "clamp(1.8rem, 4vw, 3rem)",
-          color: light ? "#FFFFFF" : "#072A63",
+          color: light ? "#FFFFFF" : "#142B6F",
         }}
       >
         {title}
       </h2>
       <motion.div
-        className="mt-5 mb-5 mx-auto rounded-full"
+        className="mt-6 mb-6 mx-auto rounded-full"
         style={{
           width: centered ? "auto" : "fit-content",
           display: "flex",
@@ -60,19 +61,20 @@ export default function SectionHeader({
       >
         <div
           style={{
-            height: "3px",
-            width: "60px",
+            height: "2px",
+            width: "64px",
             borderRadius: "2px",
-            background: "linear-gradient(90deg, #0B3D91, #F4B400)",
+            background: light
+              ? "linear-gradient(90deg, rgba(255,255,255,0.35), #F4B400)"
+              : "linear-gradient(90deg, #0B3D91, #F4B400)",
           }}
         />
       </motion.div>
       {subtitle && (
         <p
-          className="leading-relaxed max-w-4xl mx-auto text-center w-full block"
+          className={`leading-relaxed text-lg max-w-2xl w-full block ${centered ? "mx-auto text-center" : ""}`}
           style={{
-            color: light ? "rgba(255,255,255,0.72)" : "#4A5568",
-            fontSize: "clamp(0.95rem, 1.8vw, 1.1rem)",
+            color: light ? "rgba(255,255,255,0.72)" : "#475569",
           }}
         >
           {subtitle}

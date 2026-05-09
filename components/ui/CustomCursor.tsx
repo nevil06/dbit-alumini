@@ -6,7 +6,13 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === "undefined") {
+      return true;
+    }
+
+    return window.matchMedia("(pointer: coarse)").matches;
+  });
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -17,12 +23,11 @@ export default function CustomCursor() {
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    // Detect mobile / touch devices
-    if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
-      setIsMobile(true);
-      return;
-    }
-    setIsMobile(false);
+    const mediaQuery = window.matchMedia("(pointer: coarse)");
+
+    const handlePointerChange = (event: MediaQueryListEvent) => {
+      setIsMobile(event.matches);
+    };
 
     const moveCursor = (e: MouseEvent) => {
       // Offset by half the width/height (32px/2 = 16px) to center the cursor
@@ -48,6 +53,14 @@ export default function CustomCursor() {
     const handleMouseLeave = () => setIsVisible(false);
     const handleMouseEnter = () => setIsVisible(true);
 
+    mediaQuery.addEventListener("change", handlePointerChange);
+
+    if (mediaQuery.matches) {
+      return () => {
+        mediaQuery.removeEventListener("change", handlePointerChange);
+      };
+    }
+
     window.addEventListener("mousemove", moveCursor);
     window.addEventListener("mouseover", handleMouseOver);
     document.documentElement.addEventListener("mouseleave", handleMouseLeave);
@@ -58,6 +71,7 @@ export default function CustomCursor() {
       window.removeEventListener("mouseover", handleMouseOver);
       document.documentElement.removeEventListener("mouseleave", handleMouseLeave);
       document.documentElement.removeEventListener("mouseenter", handleMouseEnter);
+      mediaQuery.removeEventListener("change", handlePointerChange);
     };
   }, [cursorX, cursorY, isVisible]);
 

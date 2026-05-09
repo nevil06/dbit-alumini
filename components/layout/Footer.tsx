@@ -77,11 +77,11 @@ export default function Footer() {
       style={{ background: "#0A1628", borderTop: "1px solid rgba(244,180,0,0.12)" }}
     >
       {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 py-16 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.35fr_0.95fr_0.95fr_1fr] gap-10 lg:gap-12">
 
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 lg:pl-4">
             <div className="flex items-center gap-2 mb-5">
               <Image src="/images/alumni-logo.jpg" alt="Alumni Logo" width={48} height={48} className="rounded-full object-contain bg-white border border-[#0B3D91]" />
               <div className="ml-1">
@@ -93,7 +93,7 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-            <p className="text-white/55 text-sm leading-relaxed mb-6">
+            <p className="text-white/55 text-sm leading-relaxed mb-6 max-w-[20rem]">
               The official alumni network of Don Bosco Institute of Technology,
               Bangalore. Connecting DBITians across the globe since 2001.
             </p>
@@ -201,7 +201,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 w-full">
           <p className="text-white/35 text-xs">
             © {new Date().getFullYear()} DBIT Alumni Association. All rights reserved.
           </p>

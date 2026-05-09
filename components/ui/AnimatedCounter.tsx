@@ -17,19 +17,15 @@ export default function AnimatedCounter({
   duration = 2000,
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
-  const [mounted, setMounted] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted || !isInView) return;
+    if (!isInView) return;
 
     let startTime: number | null = null;
     const startValue = 0;
+    let frameId = 0;
 
     const step = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
@@ -37,11 +33,15 @@ export default function AnimatedCounter({
       // Ease out
       const eased = 1 - Math.pow(1 - progress, 3);
       setCount(Math.floor(eased * (value - startValue) + startValue));
-      if (progress < 1) requestAnimationFrame(step);
+      if (progress < 1) {
+        frameId = requestAnimationFrame(step);
+      }
     };
 
-    requestAnimationFrame(step);
-  }, [mounted, isInView, value, duration]);
+    frameId = requestAnimationFrame(step);
+
+    return () => cancelAnimationFrame(frameId);
+  }, [isInView, value, duration]);
 
   return (
     <span ref={ref}>

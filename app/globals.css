@@ -133,12 +133,35 @@ body {
 
 /* ─── Hover card lift ─── */
 .card-hover {
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-              box-shadow 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .card-hover:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 48px rgba(11, 61, 145, 0.18);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(11, 61, 145, 0.12);
+}
+
+.premium-card {
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.05);
+}
+
+.premium-card:hover {
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+}
+
+.premium-card-dark {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 24px 50px rgba(2, 6, 23, 0.24);
+}
+
+.premium-card-dark:hover {
+  box-shadow: 0 24px 60px rgba(2, 6, 23, 0.3);
 }
 
 /* ─── Mobile nav overlay ─── */
@@ -166,4 +189,16 @@ body {
 }
 .nav-link:hover::after {
   width: 100%;
+}
+
+.section-shell {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section-shell {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
 }
